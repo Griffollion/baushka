@@ -1,0 +1,65 @@
+.screen-2 {
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+
+
+.screen-2__text-1 {
+    position: absolute;
+    left: 23px;
+    top: 20px;
+
+}
+
+.screen-2__text-1 img {
+    width: 198px;
+}
+
+.screen-2__boxs {
+    position: absolute;
+    left: 9px;
+    top: 161px;
+}
+
+.light {
+    position: absolute;
+    left: -9px;
+    top: -75px;
+    z-index: 1;
+}
+
+.milk {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.milk.milk--1 {
+    width: 153px;
+}
+
+.milk.milk--2 {
+    width: 153px;
+    left: 102px;
+    top: 8px;
+}
+
+.milk.milk--3 {
+    width: 135px;
+    top: 50px;
+    left: 50px;
+}
+
+.screen-2__text-2 {
+    position: absolute;
+    left: 24px;
+    bottom: 15px;
+}
+
+.screen-2__text-2 img {
+    width: 194px;
+}
