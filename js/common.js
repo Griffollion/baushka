@@ -1,6 +1,15 @@
+if ('NodeList' in window && !NodeList.prototype.forEach) {
+  console.info('polyfill for IE11');
+  NodeList.prototype.forEach = function (callback, thisArg) {
+      thisArg = thisArg || window;
+      for (var i = 0; i < this.length; i++) {
+          callback.call(thisArg, this[i], i, this);
+      }
+  };
+}
+
 function start() {
   var images = document.querySelectorAll("img");
-
   images.forEach(function (el) {
     el.ondragstart = function () {
       return false;
@@ -21,9 +30,7 @@ function start() {
   var part3 = false;
   var eventStart = false;
   var isBtn = false;
-
   var creative = document.querySelector(".container");
-
   creative.classList.add("active");
 
   function headShake() {
@@ -96,36 +103,29 @@ function start() {
     document.querySelector(el).classList.add(className);
   }
 
-  setTimeout(function() {
+  setTimeout(function () {
     addClass(".star--1", "bounceInDown");
   }, 100);
-
-  setTimeout(function() {
+  setTimeout(function () {
     addClass(".star--2", "bounceInDown");
   }, 200);
-
-  setTimeout(function() {
+  setTimeout(function () {
     addClass(".star--3", "bounceInDown");
   }, 300);
-
-  setTimeout(function() {
+  setTimeout(function () {
     removeInvisible(".lamb");
   }, 2800);
-
-  setTimeout(function() {
+  setTimeout(function () {
     headShake();
   }, 3300);
-
-  setTimeout(function() {
+  setTimeout(function () {
     removeInvisible(".main-text");
   }, 4000);
-
-  setTimeout(function() {
+  setTimeout(function () {
     removeInvisible(".sub-text-1");
     eventStart = true;
   }, 5500);
-
-  setTimeout(function() {
+  setTimeout(function () {
     iron();
   }, 6000);
 
@@ -134,30 +134,25 @@ function start() {
       if (!isSlept) {
         stopIron();
         stopHeadShake();
-        setTimeout(function() {
+        setTimeout(function () {
           sleptStart();
           addInvisible(".sub-text-1");
           addInvisible(".main-text");
-
-          setTimeout(function() {
+          setTimeout(function () {
             peppyStart();
           }, 3500);
-
-          setTimeout(function() {
+          setTimeout(function () {
             headShake();
           }, 5500);
-
-          setTimeout(function() {
+          setTimeout(function () {
             removeInvisible(".main-text");
           }, 6500);
-
-          setTimeout(function() {
+          setTimeout(function () {
             removeInvisible(".sub-text-2");
             dragBlanket();
             dragOn = true;
           }, 8000);
         }, 1800);
-
         isSlept = true;
       }
 
@@ -168,27 +163,22 @@ function start() {
         changeBlanket();
         addInvisible(".sub-text-2");
         addInvisible(".main-text");
-
-        setTimeout(function() {
+        setTimeout(function () {
           part3 = true;
           peppyStart();
           document.querySelector(".screen-1").classList.add("disabled");
         }, 3500);
-
-        setTimeout(function() {
+        setTimeout(function () {
           headShake();
         }, 5500);
-
-        setTimeout(function() {
+        setTimeout(function () {
           removeInvisible(".main-text");
         }, 6500);
-
-        setTimeout(function() {
+        setTimeout(function () {
           removeInvisible(".sub-text-3");
           document.querySelector(".sub-text-3").classList.add("enabled");
         }, 8500);
-
-        setTimeout(function() {
+        setTimeout(function () {
           levitateStart();
         }, 9500);
       }
@@ -201,36 +191,29 @@ function start() {
       sleptStart();
       addInvisible(".main-text");
       addInvisible(".sub-text-3");
-
-      setTimeout(function() {
+      setTimeout(function () {
         zzzShow();
       }, 1000);
-
-      setTimeout(function() {
+      setTimeout(function () {
         removeInvisible(".main-text-2");
       }, 3500);
-
-      setTimeout(function() {
+      setTimeout(function () {
         sowSecScreen();
       }, 5000);
-
       isBtn = true;
     }
   }
 
-  screen1.addEventListener("mousedown", function() {
+  screen1.addEventListener("mousedown", function () {
     step1();
   });
-
-  screen1.addEventListener("touchstart", function() {
+  screen1.addEventListener("touchstart", function () {
     step1();
   });
-
-  btn.addEventListener("touchstart", function() {
+  btn.addEventListener("touchstart", function () {
     step2();
   });
-
-  btn.addEventListener("mousedown", function() {
+  btn.addEventListener("mousedown", function () {
     step2();
   });
 }
