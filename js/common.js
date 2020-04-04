@@ -1,8 +1,8 @@
 function start() {
   var images = document.querySelectorAll("img");
 
-  images.forEach(el => {
-    el.ondragstart = function() {
+  images.forEach(function (el) {
+    el.ondragstart = function () {
       return false;
     };
   });
@@ -82,7 +82,7 @@ function start() {
   }
 
   function zzzShow() {
-    zzz.forEach(el => {
+    zzz.forEach(function (el) {
       el.classList.add("animated");
     });
   }
