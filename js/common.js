@@ -23,6 +23,11 @@ function start() {
   var eventStart = false;
   var isBtn = false;
 
+
+  var creative = document.querySelector('.container');
+
+  creative.classList.add('active');
+
   function headShake() {
     head.classList.add("shake");
   }
@@ -56,7 +61,8 @@ function start() {
   }
 
   function levitateStart() {
-    document.querySelector(".sub-text-3").classList.add("levitate enabled");
+    document.querySelector(".sub-text-3").classList.add("levitate");
+    document.querySelector(".sub-text-3").classList.add("enabled");
     document.querySelector(".screen-1").classList.add("disabled");
   }
 
@@ -152,7 +158,7 @@ function start() {
             dragBlanket();
             dragOn = true;
           }, 8000);
-        }, 2000);
+        }, 1800);
 
         isSlept = true;
       }
