@@ -131,7 +131,8 @@ function start() {
     iron();
   }, 6000);
 
-  screen1.addEventListener("mousedown", function() {
+
+  function step1 () {
     if (eventStart) {
       if (!isSlept) {
         stopIron();
@@ -195,9 +196,9 @@ function start() {
         }, 9500);
       }
     }
-  });
+  }
 
-  btn.addEventListener("mousedown", function() {
+  function step2() {
     if (!isBtn) {
       stopHeadShake();
       sleptStart();
@@ -218,6 +219,22 @@ function start() {
 
       isBtn = true
     }
+  }
+
+  screen1.addEventListener("mousedown", function() {
+    step1 ()
+  });
+
+  screen1.addEventListener("touchstart", function() {
+    step1 ()
+  })
+
+  btn.addEventListener('touchstart', function() {
+    step2()
+  })
+
+  btn.addEventListener("mousedown", function() {
+    step2()
   });
 }
 
