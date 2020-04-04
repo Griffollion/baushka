@@ -77,20 +77,20 @@
 
 .screen-2.visible .milk {
     animation: milkOn .8s linear both;
-    animation-delay: 3s;
+    animation-delay: 2.9s;
 }
 
 .screen-2.visible .light {    
     animation: milkOn .8s linear both;
-    animation-delay: 3s;
+    animation-delay:  2.9s;
 }
 
 .screen-2.visible .screen-2__text-1 {
     animation: textOn .8s linear both;
-    animation-delay: 2s;
+    animation-delay: 1.9s;
 }
 
 .screen-2.visible .screen-2__text-2 {
     animation: text2On .8s linear both;
-    animation-delay: 3s;
+    animation-delay:  2.9s;
 }
