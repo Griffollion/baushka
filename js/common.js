@@ -1,12 +1,11 @@
-var images = document.querySelectorAll("img");
-
-images.forEach(el => {
-  el.ondragstart = function() {
-    return false;
-  };
-});
-
 function start() {
+  var images = document.querySelectorAll("img");
+
+  images.forEach(el => {
+    el.ondragstart = function() {
+      return false;
+    };
+  });
   var head = document.querySelector(".peppy__head");
   var bodyPeppy = document.querySelector(".peppy__body");
   var bodySlept = document.querySelector(".slept");
@@ -23,10 +22,9 @@ function start() {
   var eventStart = false;
   var isBtn = false;
 
+  var creative = document.querySelector(".container");
 
-  var creative = document.querySelector('.container');
-
-  creative.classList.add('active');
+  creative.classList.add("active");
 
   function headShake() {
     head.classList.add("shake");
@@ -131,8 +129,7 @@ function start() {
     iron();
   }, 6000);
 
-
-  function step1 () {
+  function step1() {
     if (eventStart) {
       if (!isSlept) {
         stopIron();
@@ -217,24 +214,24 @@ function start() {
         sowSecScreen();
       }, 5000);
 
-      isBtn = true
+      isBtn = true;
     }
   }
 
   screen1.addEventListener("mousedown", function() {
-    step1 ()
+    step1();
   });
 
   screen1.addEventListener("touchstart", function() {
-    step1 ()
-  })
+    step1();
+  });
 
-  btn.addEventListener('touchstart', function() {
-    step2()
-  })
+  btn.addEventListener("touchstart", function() {
+    step2();
+  });
 
   btn.addEventListener("mousedown", function() {
-    step2()
+    step2();
   });
 }
 
