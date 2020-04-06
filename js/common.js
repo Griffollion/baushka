@@ -152,7 +152,7 @@ function start() {
             dragBlanket();
             dragOn = true;
           }, 8000);
-        }, 1800);
+        }, 1500);
         isSlept = true;
       }
 

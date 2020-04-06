@@ -82,6 +82,7 @@ img {
     position: relative;
     opacity: 1;
     transition: opacity 1.5s;
+    height: 100%;
 }
 
 .screen-1.disabled {
@@ -138,13 +139,13 @@ img {
 }
 
 .sub-text img.sub-text-3 {
-    width: 191px;
-    top: -15px;
-    left: 27px;
+    top: -10px;
+    left: 55px;
     cursor: pointer;
     z-index: 1000;
     pointer-events: auto;
-    transform: translateY(-8px)
+    transform: translateY(-8px);
+    width: 130px;
 }
 
 .sub-text img.sub-text-3.invisible {
@@ -285,4 +286,15 @@ img {
     width: 20px;
     left: 84px;
     top: -14px;
+}
+
+.logo {
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    pointer-events: none;
+}
+
+.logo img {
+    width: 40px;
 }
